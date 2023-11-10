@@ -26,7 +26,6 @@ public class UIUnitBar : MonoBehaviour
             unitItem.GetComponent<UIUnitItem>().Init(
                 unitType.unitName,
                 () => {
-                    // Codigo Que se va a ejecutar al presionar el boton
                     UnitManager.Instance.SelectedUnitTypeToSpawn = unitType;
                 }
             );

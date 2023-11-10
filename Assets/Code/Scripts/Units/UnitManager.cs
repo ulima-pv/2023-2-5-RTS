@@ -39,6 +39,5 @@ public class UnitManager : MonoBehaviour
             position,
             Quaternion.identity
         );
-        // ...
     }
 }

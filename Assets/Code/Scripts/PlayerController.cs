@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace PlayerCamera
@@ -9,6 +10,8 @@ namespace PlayerCamera
     {
         [SerializeField]
         private PlayerCamera m_PlayerCamera;
+        [SerializeField]
+        private Camera m_MyCamera;
 
         private Vector2 m_MoveDir;
 
@@ -42,6 +45,30 @@ namespace PlayerCamera
             {
                 var rot = Quaternion.Euler(0f, -m_PlayerCamera.RotationSpeed, 0f);
                 m_PlayerCamera.RotationDesired *= rot;
+            }
+        }
+
+        private void OnClick(InputValue value)
+        {
+            if (value.isPressed 
+                && !EventSystem.current.IsPointerOverGameObject())
+            {
+                Ray ray = m_MyCamera.ScreenPointToRay(
+                    new Vector2(
+                        Mouse.current.position.x.value,
+                        Mouse.current.position.y.value
+                    )
+                );
+
+                if (Physics.Raycast(
+                    ray,
+                    out RaycastHit hit,
+                    float.MaxValue
+                ))
+                {
+                    // Spawneo Unit
+                    UnitManager.Instance.SpawnUnit(hit.point);
+                }
             }
         }
 

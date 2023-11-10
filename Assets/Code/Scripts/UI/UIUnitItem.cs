@@ -24,6 +24,8 @@ public class UIUnitItem : MonoBehaviour
     public void Init(string unitName, UnityAction listener)
     {
         m_Text.text = unitName;
-        m_But.onClick.AddListener(listener);
+        m_But.onClick.AddListener(() => {
+            listener.Invoke();
+        });
     }
 }
