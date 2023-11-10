@@ -67,7 +67,7 @@ namespace PlayerCamera
                 ))
                 {
                     // Spawneo Unit
-                    UnitManager.Instance.SpawnUnit(hit.point);
+                    GameManager.Instance.Select(hit.point);
                 }
             }
         }

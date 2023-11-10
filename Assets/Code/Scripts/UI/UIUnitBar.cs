@@ -26,6 +26,7 @@ public class UIUnitBar : MonoBehaviour
             unitItem.GetComponent<UIUnitItem>().Init(
                 unitType.unitName,
                 () => {
+                    GameManager.Instance.Mode = GameMode.UnitSpawn;
                     UnitManager.Instance.SelectedUnitTypeToSpawn = unitType;
                 }
             );

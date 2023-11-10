@@ -5,9 +5,9 @@ using UnityEngine;
 public class UnitManager : MonoBehaviour
 {
     /*
-     - Spawn Unidades
-     - Seleccion Unidad a Instanciar
-     - Seleccionar Unidad / Unidades
+     - Spawn Unidades X
+     - Seleccion Unidad a Instanciar X
+     - Seleccionar Unidad / Unidades 
      - Mover Unidades
     */
     private static UnitManager m_Instance;
@@ -39,5 +39,10 @@ public class UnitManager : MonoBehaviour
             position,
             Quaternion.identity
         );
+    }
+
+    public void SelectUnit(Vector3 position)
+    {
+        Debug.Log("Se debe seleccionar una Unidad");
     }
 }
