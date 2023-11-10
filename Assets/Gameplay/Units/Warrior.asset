@@ -15,3 +15,4 @@ MonoBehaviour:
   unitName: Warrior
   speed: 5
   hp: 4
+  prefab: {fileID: 4404195542170094818, guid: 3ceef0415301d1f4896e64c9ca1a8890, type: 3}

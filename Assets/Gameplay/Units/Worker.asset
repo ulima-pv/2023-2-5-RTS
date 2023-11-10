@@ -15,3 +15,4 @@ MonoBehaviour:
   unitName: Worker
   speed: 3
   hp: 3
+  prefab: {fileID: 6831778653306112088, guid: 8e533e30276ad2541b03f29684601fb8, type: 3}

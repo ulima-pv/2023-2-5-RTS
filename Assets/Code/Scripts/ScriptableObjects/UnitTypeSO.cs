@@ -8,4 +8,5 @@ public class UnitTypeSO : ScriptableObject
     public string unitName;
     public float speed;
     public float hp;
+    public GameObject prefab;
 }
