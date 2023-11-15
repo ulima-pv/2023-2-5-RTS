@@ -13,6 +13,7 @@ public class UnitManager : MonoBehaviour
     private static UnitManager m_Instance;
 
     private UnitTypeSO m_SelectedUnitTypeToSpawn = null;
+    private List<Unit> m_SelectedUnits = new List<Unit>();
 
     public static UnitManager Instance { 
         get => m_Instance; 
@@ -43,6 +44,14 @@ public class UnitManager : MonoBehaviour
 
     public void SelectUnit(Unit unit)
     {
+        if (!unit.IsSelected)
+        {
+            m_SelectedUnits.Add(unit);
+        }else
+        {
+            m_SelectedUnits.Remove(unit);
+        }
+        
         unit.Select();
     }
 }
