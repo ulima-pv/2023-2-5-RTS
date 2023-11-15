@@ -41,8 +41,8 @@ public class UnitManager : MonoBehaviour
         );
     }
 
-    public void SelectUnit(Vector3 position)
+    public void SelectUnit(Unit unit)
     {
-        Debug.Log("Se debe seleccionar una Unidad");
+        unit.Select();
     }
 }

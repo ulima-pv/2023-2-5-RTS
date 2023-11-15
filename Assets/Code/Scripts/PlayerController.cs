@@ -67,8 +67,17 @@ namespace PlayerCamera
                 ))
                 {
                     // Spawneo Unit
-                    GameManager.Instance.Select(hit.point);
+                    GameManager.Instance.Select(hit.point, hit.collider.gameObject);
                 }
+            }
+        }
+
+        private void OnChangeSelectMode(InputValue value)
+        {
+            if (value.isPressed)
+            {
+                Debug.Log("Change Mode: Selection");
+                GameManager.Instance.Mode = GameMode.Selection;
             }
         }
 

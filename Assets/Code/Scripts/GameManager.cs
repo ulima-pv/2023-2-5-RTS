@@ -28,14 +28,20 @@ public class GameManager : MonoBehaviour
         m_Instance = this;
     }
 
-    public void Select(Vector3 position)
+    public void Select(Vector3 position, GameObject collision)
     {
         if (m_Mode == GameMode.UnitSpawn)
         {
             UnitManager.Instance.SpawnUnit(position);
         }else
         {
-            UnitManager.Instance.SelectUnit(position);
+            Debug.Log(collision.name);
+            var unit = collision.GetComponent<Unit>();
+            if (unit != null)
+            {
+                
+                UnitManager.Instance.SelectUnit(unit);
+            }
         }
     }
 }
